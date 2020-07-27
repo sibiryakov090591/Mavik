@@ -1,0 +1,101 @@
+.contacts {
+    position: relative;
+    padding-bottom: 32px;
+
+    &__items {
+        display: flex;
+        margin-left: 60px;
+    }
+
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+    }
+
+    &__info-box {
+        margin-bottom: 30px;
+    }
+
+    &__info-title {
+        font-size: 21px;
+        @extend %ubuntu-bold;
+        margin-bottom: 13px;
+    }
+
+    &__info-phone,
+    &__info-mail {
+        display: block;
+        font-size: 15px;
+        @extend %ubuntu-light;
+        margin-bottom: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__form {
+        max-width: 580px;
+        margin-right: 105px;
+    }
+
+    &__form-title {
+        font-size: 21px;
+        @extend %ubuntu-bold;
+    }
+
+    &__form-text {
+        font-size: 15px;
+        @extend %ubuntu-light;
+        margin: 12px 0;
+    }
+
+    &__form-input,
+    &__form-textarea {
+        width: 280px;
+        height: 46px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        outline: none;
+        padding: 15px;
+        color: #fff;
+        margin: 0 8px 10px 0;
+        font-size: 13px;
+        line-height: 130%;
+        @extend %ubuntu-light;
+    }
+
+    &__form-textarea {
+        width: 570px;
+        height: 145px;
+        resize: none;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__social-item {
+        margin: 14px 0;
+    }
+
+    &__social-link img {
+        opacity: .5;
+        transition: 0.2s all ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.footer {
+    text-align: right;
+    position: absolute;
+    bottom: 32px;
+    right: 64px;
+    font-size: 13px;
+    @extend %ubuntu-light;
+    opacity: .6;
+}

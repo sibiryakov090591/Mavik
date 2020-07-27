@@ -1,0 +1,55 @@
+.specifications {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 0 60px;
+        position: relative;
+    }
+
+    &__box {
+        max-height: 385px;
+    }
+
+    &__box-mavik {
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0);
+    }
+
+    &__item {
+        margin-bottom: 120px;
+        width: 290px;
+        position: relative;
+    }
+
+    &__item_title {
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    &__item_text {
+        font-size: 15px;
+    }
+
+    &__line {
+        position: absolute;
+    }
+    &__line-1 {
+        right: -95px;
+        top: 15px;
+    }
+    &__line-2 {
+        right: -263px;
+        top: -65px;
+    }
+    &__line-3 {
+        top: 13px;
+        left: -270px;
+    }
+    &__line-4 {
+        top: -74px;
+        left: -135px;
+    }
+}

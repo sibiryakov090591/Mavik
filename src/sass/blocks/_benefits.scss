@@ -1,0 +1,73 @@
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 30px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-end;
+        max-width: 590px;
+        position: relative;
+        margin: 0 60px 100px 0;
+
+        &:nth-child(3),
+        &:nth-child(4) {
+            margin-bottom: 0;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+            margin-right: 0;
+            transform: translateY(-25px);
+        }
+    }
+
+    &__num {
+        margin-right: 10px;
+        font-size: 36px;
+        @extend %ubuntu-medium;
+    }
+
+    &__img {
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 195px;
+            height: 130px;
+            border: 2px solid white;
+            bottom: 18px;
+            right: -12px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+        height: 100%;
+        margin-left: 32px;
+    }
+    &__info-title {
+        font-size: 21px;
+        line-height: 24px;
+    }
+
+    &__lines {
+        position: absolute;
+    }
+    &__line-1 {
+        right: -74px;
+        top: 33px;
+    }
+    &__line-2 {
+        left: -466px;
+        bottom: -90px;
+    }
+    &__line-3 {
+        right: -74px;
+        top: 22px;
+    }
+}

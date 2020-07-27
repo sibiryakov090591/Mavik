@@ -1,0 +1,89 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 30px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 30px;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 17px;
+        @extend %ubuntu-medium;
+    }
+
+    &__phone {
+        margin-left: 10px;
+        @extend %ubuntu-bold;
+    }
+}
+
+.menu {
+    transition: .3s all ease;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin-left: 20px;
+    }
+}
+
+.mobile-menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .3s all;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 6px;
+        transition: .3s all;
+    }
+    &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 70%;
+        background-color: #fff;
+        position: absolute;
+        bottom: 6px;
+        right: 0;
+        transition: .3s all;
+    }
+
+    &.active {
+        span {
+            transform: scale(0);
+        }
+        &:before {
+            transform: rotate(-45deg);
+            top: 14px;
+        }
+        &:after {
+            width: 100%;
+            transform: rotate(45deg);
+            bottom: 14px;
+        }
+    }
+}

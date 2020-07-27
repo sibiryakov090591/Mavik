@@ -1,0 +1,18 @@
+.button {
+    width: 115px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    @extend %ubuntu-medium;
+    transition: 0.2s all ease;
+    outline: none;
+
+    &:hover {
+        color: #000000;
+        background-color: #fff;
+    }
+}

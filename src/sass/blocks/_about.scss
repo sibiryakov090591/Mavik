@@ -1,0 +1,86 @@
+.about {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 55px;
+    }
+
+    &__text {
+        max-width: 445px;
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__slider {
+        max-width: 560px;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 565px;
+            height: 280px;
+            border: 4px solid white;
+            bottom: 41px;
+            right: -17px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+        margin: 40px 0 20px 20px;
+    }
+
+    &__slider-text {
+        position: absolute;
+        left: -220px;
+        bottom: 10px;
+        z-index: 5;
+        width: 281px;
+        text-align: right;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+    }
+}
+
+.slider-btn {
+    width: 60px;
+    height: 48px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: -42px;
+    z-index: 5;
+    border: none;
+    background-color: #fff;
+    outline: none;
+    padding: 16px 25px;
+    transition: 0.1s all;
+
+    &__prev {
+        right: 61px;
+    }
+
+    svg {
+        stroke: black;
+    }
+}
+
+.slick-track {
+    display: flex;
+}
+
+.slick-list {
+    width: 560px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.slick-disabled {
+    background-color: #1c1c1c;
+    svg {
+        stroke: white;
+    }
+}
