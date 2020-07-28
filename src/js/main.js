@@ -34,14 +34,6 @@ $(document).ready(function () {
             infinite: false,
     });
 
-
-    // Accordion
-    $('.questions__item-title__btn').on('click', function(){
-        $('.questions__item').removeClass('questions__item-active');
-        $(this).parent().addClass('questions__item-active');
-    });
-
-
     // Mobile menu
     $('.mobile-menu').on('click', function(){
         $('.mobile-menu').toggleClass('active');
@@ -53,3 +45,55 @@ $(document).ready(function () {
         $('.menu').removeClass('active');
     });
 });
+
+
+
+///////////////////////////////////////
+////////////// PHPMailer //////////////
+///////////////////////////////////////
+
+// Отправка данных на сервер
+function send(event, php){
+console.log("Отправка запроса");
+event.preventDefault ? event.preventDefault() : event.returnValue = false;
+let req = new XMLHttpRequest();
+req.open('POST', php, true);
+req.onload = function() {
+	if (req.status >= 200 && req.status < 400) {
+	json = JSON.parse(this.response); // Internet Explorer 11
+    	console.log(json);
+        
+    	if (json.result == "success") {
+    		// Если сообщение отправлено
+    		alert("Сообщение отправлено");
+    	} else {
+    		// Если произошла ошибка
+    		alert("Ошибка. Сообщение не отправлено");
+    	}
+    // Если не удалось связаться с php файлом
+    } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
+
+// Если не удалось отправить запрос. Стоит блок на хостинге
+req.onerror = function() {alert("Ошибка отправки запроса");};
+req.send(new FormData(event.target));
+}
+
+
+///////////////////////////////////////
+////////////// Accordion //////////////
+///////////////////////////////////////
+
+let acc = document.getElementsByClassName("questions__item-title__btn");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("questions__item-active");
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}

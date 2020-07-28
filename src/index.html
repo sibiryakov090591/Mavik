@@ -11,6 +11,7 @@
 
 <body>
 
+ <!-- //////////////////////////// Header - menu \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <header class="header">
         <div class="container">
             <div class="header__inner">
@@ -43,6 +44,8 @@
         </div>
     </header>
 
+
+<!-- //////////////////////////// Promo section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section promo" id="promo">
         <div class="promo-gradient"></div>
         <div class="container">
@@ -84,6 +87,7 @@
     </section>
 
 
+<!-- //////////////////////////// About section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section about" id="about">
         <div class="container">
             <h3 class="title">
@@ -139,6 +143,8 @@
         </div>
     </section>
 
+
+<!-- //////////////////////////// Benefits section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section benefits" id="benefits">
         <div class="container">
             <h3 class="title">Преимущества</h3>
@@ -223,6 +229,8 @@
         </div>
     </section>
 
+
+<!-- //////////////////////////// Specifications section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section specifications" id="specifications">
         <div class="container">
             <h3 class="title">Характеристики</h3>
@@ -285,6 +293,8 @@
         </div>
     </section>
 
+
+<!-- //////////////////////////// Questions section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section questions" id="questions">
         <div class="container">
 
@@ -296,47 +306,47 @@
                         Какие отличия между Mavic 2 Pro и Mavic 2 Zoom?
                     </h4>
                     <div class="questions__item-title__btn"><img src="images/questions-arrow.svg" alt="arrow"></div>
-                    <p class="questions__item-text">
+                    <div class="panel"><p class="questions__item-text">
                         В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время,
                         скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные
                         функции и уникальная функция Hyperlapse (гиперлапс).
-                    </p>
+                    </p></div>
                 </div>
-                <div class="questions__item">
+                <div class="questions__item questions__item-active">
                     <h4 class="questions__item-title">
                         Чем Mavic 2 лучше Mavic Pro?
                     </h4>
                     <div class="questions__item-title__btn"><img src="images/questions-arrow.svg" alt="arrow"></div>
-                    <p class="questions__item-text">
+                    <div class="panel"><p class="questions__item-text">
                         В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время,
                         скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные
                         функции и уникальная функция Hyperlapse (гиперлапс).
-                    </p>
+                    </p></div>
                 </div>
-                <div class="questions__item">
+                <div class="questions__item questions__item-active">
                     <h4 class="questions__item-title">
                         Можно ли подключить Mavic 2 к очкам DJI Goggles?
                     </h4>
                     <div class="questions__item-title__btn"><img src="images/questions-arrow.svg" alt="arrow"></div>
-                    <p class="questions__item-text">
+                    <div class="panel"><p class="questions__item-text">
                         В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время,
                         скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные
                         функции и уникальная функция Hyperlapse (гиперлапс).
-                    </p>
+                    </p></div>
                 </div>
-                <div class="questions__item">
+                <div class="questions__item questions__item-active">
                     <h4 class="questions__item-title">
                         Является ли Mavic 2 водонепроницаемым？
                     </h4>
                     <div class="questions__item-title__btn"><img src="images/questions-arrow.svg" alt="arrow"></div>
-                    <p class="questions__item-text">
+                    <div class="panel"><p class="questions__item-text">
                         В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время,
                         скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные
                         функции и уникальная функция Hyperlapse (гиперлапс).
-                    </p>
+                    </p></div>
                 </div>
-                <img class="questions__mavik-img" src="images/mavik.png" alt="mavik">
             </div>
+            <img class="questions__mavik-img" src="images/mavik.png" alt="mavik">
         </div>
         <div class="scroll__btn">
             <a href="#contacts">
@@ -345,6 +355,8 @@
         </div>
     </section>
 
+
+<!-- //////////////////////////// Contacts section \\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
     <section class="page-section contacts" id="contacts">
         <div class="container">
 
@@ -372,21 +384,18 @@
                     </div>
                 </div>
                 <div class="contacts__form">
-                    <form>
+                    <form enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'send.php')">
                         <h4 class="contacts__form-title">
                             Остались вопросы?
                         </h4>
                         <p class="contacts__form-text">
                             Мы обязательно свяжемся с вами в течение двух рабочих дней
                         </p>
-                        <div class="contacts__form-inputs">
                         <div class="contacts__form-line">
                             <input class="contacts__form-input" placeholder="Ваше имя" type="text" name="name">
                             <input class="contacts__form-input" placeholder="Ваш e-mail" type="text name="email"">
                         </div>
-                        <textarea class="contacts__form-textarea" placeholder="Что вас интересует?"
-                            type="text" name="message"></textarea>
-                        </div>
+                        <textarea class="contacts__form-textarea" placeholder="Что вас интересует?" name="text"></textarea>
                         <button class="button" type="submit">ОТПРАВИТЬ</button>
                     </form>
                 </div>

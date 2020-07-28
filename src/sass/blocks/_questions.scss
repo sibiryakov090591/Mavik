@@ -1,4 +1,8 @@
 .questions {
+    min-height: 980px;
+    overflow: hidden;
+    position: relative;
+    
     &__items {
         padding-left: 25px;
         max-width: 750px;
@@ -38,9 +42,10 @@
     &__item.questions__item-active {
         .questions__item-text {
             display: block;
+            max-height: 200px;
         }
 
-        .questions__item-title__btn {
+        .questions__item-title__btn.questions__item-active{
             img {
                 transform: rotate(180deg);
             }
@@ -52,6 +57,7 @@
         line-height: 22px;
         margin: 0 20px 0 50px;
         padding-bottom: 20px;
+        max-height: 0;
         display: none;
     }
 
@@ -62,4 +68,10 @@
         z-index: -1;
         width: 60%;
     }
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
