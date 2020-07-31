@@ -83,3 +83,11 @@ a {
     padding-left: 25px;
     margin-bottom: 50px;
 }
+
+.error {
+    color: rgba(255, 0, 0, .8);
+    font-size: 12px;
+    @extend %sf-semibold;
+    margin-bottom: 10px;
+    display: flex;
+}

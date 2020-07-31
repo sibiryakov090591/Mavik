@@ -37,6 +37,7 @@
     &__form {
         max-width: 585px;
         margin-right: 105px;
+        position: relative;
     }
 
     &__form-title {
@@ -99,3 +100,4 @@
     @extend %ubuntu-light;
     opacity: .6;
 }
+

@@ -44,6 +44,43 @@ $(document).ready(function () {
         $('.mobile-menu').removeClass('active');
         $('.menu').removeClass('active');
     });
+
+    // Forms validate 
+    function validateForms(form){
+      $(form).validate({
+          rules: {
+              name: "required",
+              text: "required",
+              email: {
+                  required: true,
+                  email: true
+              }
+          },
+          messages: {
+              name: "Пожалуйста, введите свое имя!",
+              text: "Пожалуйста, введите сообщение!",
+              email: {
+                required: "Пожалуйста, введите свою электронную почту!",
+                email: "Ваша почта должна иметь формат name@domain.com"
+              }
+            }
+      });
+    };
+
+    validateForms('#form');
+
+    $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+          type: "POST",
+          url: "mailer/mavik.php",
+          data: $(this).serialize()
+      }).done(function() {
+          $(this).find("input").val("");
+          $('form').trigger('reset');
+      });
+      return false;
+  });
 });
 
 
@@ -83,17 +120,37 @@ req.send(new FormData(event.target));
 ////////////// Accordion //////////////
 ///////////////////////////////////////
 
-let acc = document.getElementsByClassName("questions__item-title__btn");
-let i;
+let acc = document.querySelectorAll(".questions__item-title__btn"),
+    panels = document.querySelectorAll(".panel");
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("questions__item-active");
-    let panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
+acc.forEach((item, i) => {
+  item.addEventListener("click", function() {
+    if (panels[i].style.maxHeight){
+      panels[i].style.maxHeight = null;
     } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
+      panels[i].style.maxHeight = panels[i].scrollHeight + "px";
     } 
+    hideTabs();
+    item.classList.toggle("questions__item-active");
+    showTabs(i);
   });
+});
+
+
+hideTabs();
+showTabs();
+
+
+function hideTabs () {
+  panels.forEach(item => {
+    item.style.maxHeight = null;
+  });
+  acc.forEach(item => {
+    item.classList.remove('questions__item-active');
+  });
+}
+
+function showTabs (i = 1) {
+  acc[i].classList.add("questions__item-active");
+  panels[i].style.maxHeight = panels[i].scrollHeight + "px";
 }

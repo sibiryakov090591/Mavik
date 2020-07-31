@@ -19,7 +19,7 @@ $body = "
 ";
 
 // Настройки PHPMailer
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+$mail = new phpmailer\PHPMailer();
 try {
     $mail->isSMTP();   
     $mail->CharSet = "UTF-8";
